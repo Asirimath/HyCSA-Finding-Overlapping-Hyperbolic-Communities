@@ -1,0 +1,18 @@
+To run ac_fast_ctype.cpp file using openmp in windows: cl /O2 /openmp /LD ac_fast_ctypes_Sparse.cpp /Fe:ac_fast_sparse.dll
+cl /O2 /openmp /LD compute_AC_grid_cpp_global_do_sparse.cpp /Fe:compute_AC_grid_cpp_global_do_sparse.dll
+cpy the dll files into the main folder
+
+
+ac_fast_wrapper_sparse.py contains the signature files and funtion definitions.
+
+
+To run ac_fast_ctype.cpp file using openmp in linux: g++ -O3 -fopenmp -shared -fPIC ac_fast_ctypes_Sparse.cpp -o ac_fast_sparse.so
+g++ -O3 -fopenmp -shared -fPIC compute_AC_grid_cpp_global_do_sparse.cpp -o  compute_AC_grid_cpp_global_do_sparse.so
+
+
+move file so: mv ac_fast_sparse.so /home/charmpin/Graph_Clustering_Project_Real_World_Data_v2_Sparse_testing_total_ll
+move file so: mv compute_AC_grid_cpp_global_do_sparse.so /home/charmpin/Graph_Clustering_Project_Real_World_Data_v2_Sparse_testing_total_ll
+
+
+
+
