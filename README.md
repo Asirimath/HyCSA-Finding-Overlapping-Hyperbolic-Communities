@@ -1,4 +1,4 @@
-
+<!-- 
 ## HyCSA: an algorithm to find overlapping hyperbolic communities.
 
 |Repository structure |  Hyperbolic community |
@@ -11,4 +11,4 @@ Run `Data_gen_v3_Overlaping_Comm_Sparse.py` with parameter `Save_Results=True`
 
 ## To obtain real-world networks:
 
-## To run community prediction:
+## To run community prediction: -->
