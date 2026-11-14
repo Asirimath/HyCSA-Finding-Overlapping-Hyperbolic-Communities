@@ -1,32 +1,46 @@
 
 This repo contains an algorithm to find overlapping hyperbolic communities.
 
-<!-- ![System Diagram](Hyperbolic_Com.png) -->
+<table>
+  <tr>
+    <!-- Left column: Image -->
+    <td width="230" valign="top" align="center">
+      <img
+        src="Hyperbolic_Com.png"
+        alt="Hyperbolic community structure"
+        width="200"
+        height="105"
+      >
+      <p>
+        <em>
+          Figure 1: Hyperbolic community structure
+          and overlapping communities.
+        </em>
+      </p>
+    </td>
 
-<h3 align="center">Hyperbolic Community Structure</h3>
+    <!-- Right column: Repository structure -->
+    <td valign="top">
+      <h2>Repository structure</h2>
 
-<p align="center">
-  <img
-    src="Hyperbolic_Com.png"
-    alt="Hyperbolic community structure"
-    width="400"
-  >
-</p>
+      <p>
+        This repository has the following
+        top-level directories:
+      </p>
 
-<p align="center">
-  <em>Figure 1: Example of a hyperbolic community.</em>
-</p>
-## Requirements:
+      <pre>Codes/
+Paper/</pre>
 
-## Repository structure
+      <p>
+        The Codes folder contains the code
+        for conducting experiments, while
+        the Paper folder contains the paper
+        and appendix.
+      </p>
+    </td>
+  </tr>
+</table>
 
-This repository has the following top-level directories
-```
-Codes/
-Paper/
-```
-
-Codes folder contains codes for doing experiments and Paper folder contains the paper and Appendix.
 
 ## To generate synthetic networks:
 Run `Data_gen_v3_Overlaping_Comm_Sparse.py` with parameter `Save_Results=True`
