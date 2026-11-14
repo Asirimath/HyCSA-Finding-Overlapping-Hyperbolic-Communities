@@ -1,5 +1,7 @@
 # hyperbolic_communities
 
+![System Diagram](Hyperbolic_Com.png)
+
 ## Repository structure
 
 This repository has the following top-level directories
