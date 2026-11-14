@@ -1,6 +1,22 @@
-# hyperbolic_communities
 
-![System Diagram](Hyperbolic_Com.png)
+This repo contains an algorithm to find overlapping hyperbolic communities.
+
+<!-- ![System Diagram](Hyperbolic_Com.png) -->
+
+<h3 align="center">Hyperbolic Community Structure</h3>
+
+<p align="center">
+  <img
+    src="Hyperbolic_Com.png"
+    alt="Hyperbolic community structure"
+    width="400"
+  >
+</p>
+
+<p align="center">
+  <em>Figure 1: Example of a hyperbolic community.</em>
+</p>
+## Requirements:
 
 ## Repository structure
 
