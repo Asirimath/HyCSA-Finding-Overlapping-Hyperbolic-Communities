@@ -11,6 +11,8 @@ Paper/
 Codes folder contains codes for doing experiments and Paper folder contains the paper and Appendix.
 
 ## To generate synthetic networks:
+Run `Data_gen_v3_Overlaping_Comm_Sparse.py`
+
 ## To obtain real-world networks:
 
 ## To run community prediction:
