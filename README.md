@@ -1,18 +1,11 @@
 
 This repo contains an algorithm to find overlapping hyperbolic communities.
 
-<p align="left">
-  <img
-    src="Hyperbolic_Com.png"
-    alt="Hyperbolic community structure"
-    width="200"
-    height="105"
-  >
-</p>
 
-<p align="left">
-  <em>Figure 1: Example of a hyperbolic community and two overlapping with  communities and corresponding adj matrix.</em>
-</p>
+|Repository structure |  Hyperbolic community |
+| :---: | :--- |
+| This repository contains two top-level directories: <br><br> `Codes/` <br> `Paper/` <br><br> The `Codes` folder contains the experimental code, while the `Paper` folder contains the paper and appendix. | <img src="Hyperbolic_Com.png" alt="Hyperbolic community structure" width="200"> <br> *Figure 1: Example of overlapping hyperbolic communities and their adjacency matrix.* |
+
 
 ## Repository structure
 
