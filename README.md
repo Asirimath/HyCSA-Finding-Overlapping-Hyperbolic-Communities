@@ -3,7 +3,7 @@ HyCSA: an algorithm to find overlapping hyperbolic communities.
 
 |Repository structure |  Hyperbolic community |
 | :--- | :---: |
-| Two top-level directories: <br><br> Codes <br> Paper <br><br> The `Codes` folder contains the experimental code, while the `Paper` folder contains the paper and appendix. | <img src="Hyperbolic_Com.png" alt="Hyperbolic community structure" width="200"> <br> *Figure 1: Example of a hyperbolic community and two overlapping communities.* |
+| Two top-level directories: <br><br> Codes <br> Paper <br> The `Codes` folder contains the experimental code, while the `Paper` folder contains the paper and appendix. | <img src="Hyperbolic_Com.png" alt="Hyperbolic community structure" width="200"> <br> *Figure 1: Example of a hyperbolic community and two overlapping communities.* |
 
 
 ## To generate synthetic networks:
