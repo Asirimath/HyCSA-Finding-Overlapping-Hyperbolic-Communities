@@ -1,13 +1,7 @@
-import cProfile
-import pstats
-import json
-import time
 
-import matplotlib.pyplot as plt
 from scipy.sparse import load_npz,save_npz
 
 from Hyperbolic_community_detection_utils_version_sets_SA_Sparse import *
-#from Hyperbolic_community_detection_utils_version_sets import *
 
 rng = np.random.default_rng(42)
 
@@ -25,10 +19,10 @@ def experiment_overlapping_comm(noise_level,mat_no_list, alpha, Initial_Seeding_
         vert_list=np.load(f"Synthetic_Data/Adj_matrices_Overlaping_Comm/Overlapping_Comm_varing_sizes/Vertex_label_info/adj_noise_{noise_level}_shape_Normal_vertex_info_mat_{mat_no}.npy")
 
         # Seeding methods
-        if Initial_Seeding_Method == 'sample_topk_percent_per_label':
+        if Initial_Seeding_Method == 'rss':
             Initial_Seeding_Method_Name = 'topk'
             seeding_param = 0.1 #0.10
-        elif Initial_Seeding_Method == 'short_random_walk2':
+        elif Initial_Seeding_Method == 'rw':
             Initial_Seeding_Method_Name = 'srw2'
             no_comm=len(np.unique(labels_list))
             seeding_param = [int(4*no_comm*np.log(no_comm)),50,1000,0.1, 0]  # [num_seeds, max_walk_length, num_walks from the vertex, pick top_k vertices, #of communities]
@@ -92,13 +86,13 @@ if __name__ == "__main__":
         mat_no_list = [0,1,2,3,4,5,6,7,8,9]
         noise_level = 0.01 #0.01,0.0,0.04
         Not_mutiple_memb_Para = False  # False for overlapping case., not a used parameter
-        alpha=0.7 #We do not need this
-        max_cliqu_para=0 #0 for all communities
+        alpha=0.7 #We do not need this parameter
+        max_cliqu_para=0 #0 for all experiemnts
 
-        bs=10 # we used bs=10
+        bs=10 # batch size
         p_add = 0.8  # probality of sampling
         Scoring_method = 'Score' #No_Score
-        Initial_Seeding_Method = 'sample_topk_percent_per_label' # sample_topk_percent_per_label, short_random_walk2
+        Initial_Seeding_Method = 'rw' # rss, rw
         Save_results_temp= False
         Alpha_temperature = 1
         t=experiment_overlapping_comm(noise_level, mat_no_list, alpha, Initial_Seeding_Method,  Scoring_method, bs, p_add, Alpha_temperature, Not_mutiple_memb_Para=False, max_cliqu_para=0, Save_results=Save_results_temp)
@@ -107,6 +101,3 @@ if __name__ == "__main__":
        # # ----------------------------#
 
         print("Done")
-
-        # results= pstats.Stats(prof)
-        # results.sort_stats(pstats.SortKey.TIME).print_stats()

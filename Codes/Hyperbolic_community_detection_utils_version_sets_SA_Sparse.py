@@ -615,10 +615,10 @@ def run_hyperbolic_community_detection_algo_SA_Sparse(A_Ori, Ori_lables, vert_se
 
    
 
-    if seeding_method=='sample_topk_percent_per_label':
+    if seeding_method=='rss':
        Maximal_cliques_temp = sample_topk_percent_per_label(vert_set, Ori_lables, A_u8_sparse, percentage = Seeding_param)
 
-    elif seeding_method == 'short_random_walk2':
+    elif seeding_method == 'rw':
         Maximal_cliques_temp1= collect_random_walk_seeds_precent_v0(G, num_seeds=Seeding_param[0], walk_length=Seeding_param[1], num_walks=Seeding_param[2], top_k=Seeding_param[3])
         Maximal_cliques_temp = select_random_walk_seeds_Jaccard(Maximal_cliques_temp1, n_select=Seeding_param[4])
 
