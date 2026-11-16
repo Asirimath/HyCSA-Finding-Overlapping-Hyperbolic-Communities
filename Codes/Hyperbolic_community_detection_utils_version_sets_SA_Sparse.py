@@ -129,11 +129,12 @@ def Compute_good_param_hyperbol_v3_new( community_dict,Subgraph_sub_list, Indx_t
     # Search ranges
     # ---------------------------------------------------------
 
-    max_val_gamma = community_dict[Indx_temp]['gamma_para'] + 20
-    min_val_gamma = max(community_dict[Indx_temp]['gamma_para'] - 20,1)
+    nc=len(Subgraph_sub_list)
+    max_val_gamma =  nc+1 #community_dict[Indx_temp]['gamma_para'] + 20 #
+    min_val_gamma = 1 #max(community_dict[Indx_temp]['gamma_para'] - 20,1) #1
 
-    max_val_H = community_dict[Indx_temp]['H_para'] + 8
-    min_val_H = max(community_dict[Indx_temp]['H_para'] - 8, 1)
+    max_val_H =  nc+1 #community_dict[Indx_temp]['H_para'] + 8 #nc+1
+    min_val_H = 1 #max(community_dict[Indx_temp]['H_para'] - 8, 1) #1
     # ---------------------------------------------------------
     # Unique nodes
     # ---------------------------------------------------------
@@ -181,7 +182,6 @@ def Compute_good_param_hyperbol_v3_new( community_dict,Subgraph_sub_list, Indx_t
 
     gamma_para_best, H_para_best, log_like_initial, D_c, Area_EC, Area_EC_comp = compute_AC_grid_cpp_local_overlap(A_sub_block_sort, min_val_gamma, max_val_gamma,
         min_val_H, max_val_H, overlap_local )
-
 
     return gamma_para_best, H_para_best, log_like_initial, D_c, Area_EC, Area_EC_comp, Ac_masked_others
 
