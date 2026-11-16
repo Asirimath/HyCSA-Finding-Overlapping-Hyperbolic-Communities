@@ -178,47 +178,49 @@ def build_sampled_dataset(cmty_file, edge_file,min_size,max_size):
 
 
 
+if __name__=="__main__":
 
-cmty_file = "SNAP_Datasets/com-orkut.top5000.cmty.txt.gz" 
-edge_file = "SNAP_Datasets/com-orkut.ungraph.txt.gz"
+    cmty_file = "SNAP_Datasets/com-orkut.top5000.cmty.txt.gz"
+    edge_file = "SNAP_Datasets/com-orkut.ungraph.txt.gz"
+    Save_Results = False
 
-for i in range(1):
-    
-    min_size=50 #100
-    max_size=1000 #150
-    
-    A, vertex_list, label_list, sampled_comms = build_sampled_dataset(cmty_file, edge_file,min_size,max_size)
-    print(len(sampled_comms))
-    
-    
-    node_indices = []
-    comm_indices = []
+    for i in range(1):
 
-    for node_i, comm_list in enumerate(label_list):
-        for q in comm_list:
-            node_indices.append(node_i)
-            comm_indices.append(q)
+        min_size=50 #100
+        max_size=1000 #150
 
-    node_indices = np.array(node_indices)
-    comm_indices = np.array(comm_indices)
-
-    r=0
-    # Create a unique file name using parameters
-    filename = f"Orkut_adj_mat_{r}_{min_size}.npz"
-    filepath = os.path.join("Adj_matrices/", filename)
+        A, vertex_list, label_list, sampled_comms = build_sampled_dataset(cmty_file, edge_file,min_size,max_size)
+        print(len(sampled_comms))
 
 
-    # Create community info files
-    filename_comm_info_labels = f"Comm_Info_Orkut_labels_{min_size}.npy"
-    filename_comm_info_vert = f"Comm_Info_Orkut_vert_{min_size}.npy"
-    filepath__comm_info_labels = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_labels)
-    filepath__comm_info_verts = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_vert)
+        node_indices = []
+        comm_indices = []
 
-    # np.save(filepath__comm_info_labels,comm_indices)
-    # np.save(filepath__comm_info_verts,node_indices)
-    
-    # save_npz(filepath, A)
+        for node_i, comm_list in enumerate(label_list):
+            for q in comm_list:
+                node_indices.append(node_i)
+                comm_indices.append(q)
 
-    # plt.figure()
-    # plt.spy(A[0:1000,0:1000])
+        node_indices = np.array(node_indices)
+        comm_indices = np.array(comm_indices)
+
+        r=0
+        if Save_Results == True:
+
+            # Create a unique file name using parameters
+            filename = f"Orkut_adj_mat_{r}_{min_size}.npz"
+            filepath = os.path.join("Adj_matrices/", filename)
+
+            # Create community info files
+            filename_comm_info_labels = f"Comm_Info_Orkut_labels_{min_size}.npy"
+            filename_comm_info_vert = f"Comm_Info_Orkut_vert_{min_size}.npy"
+            filepath__comm_info_labels = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_labels)
+            filepath__comm_info_verts = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_vert)
+
+            np.save(filepath__comm_info_labels,comm_indices)
+            np.save(filepath__comm_info_verts,node_indices)
+            save_npz(filepath, A)
+
+        # plt.figure()
+        # plt.spy(A[0:1000,0:1000])
 

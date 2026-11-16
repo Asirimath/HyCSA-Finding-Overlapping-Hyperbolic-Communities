@@ -177,49 +177,53 @@ def build_sampled_dataset(cmty_file, edge_file,min_size,max_size):
 
 
 
+if __name__=="__main__":
 
-cmty_file = "SNAP_Datasets/com-friendster.top5000.cmty.txt.gz" 
-#cmty_file = "SNAP_Datasets/com-friendster.all.cmty.txt.gz" 
-edge_file = "SNAP_Datasets/com-friendster.ungraph.txt.gz"
+    cmty_file = "SNAP_Datasets/com-friendster.top5000.cmty.txt.gz"
+    #cmty_file = "SNAP_Datasets/com-friendster.all.cmty.txt.gz"
+    edge_file = "SNAP_Datasets/com-friendster.ungraph.txt.gz"
+    Save_Results=False
 
-for i in range(1):
-    
-    min_size=50 #300
-    max_size=1000 #850
-    
-    A, vertex_list, label_list, sampled_comms = build_sampled_dataset(cmty_file, edge_file,min_size,max_size)
-    node_indices = []
-    comm_indices = []
-    
-    print(len(sampled_comms))
-    # for i in range(len(sampled_comms)):
-    #     print('Length of the community:', len(sampled_comms[i]))
-        
-    for node_i, comm_list in enumerate(label_list):
-        for q in comm_list:
-            node_indices.append(node_i)
-            comm_indices.append(q)
+    for i in range(1):
 
-    node_indices = np.array(node_indices)
-    comm_indices = np.array(comm_indices)
+        min_size=50 #300
+        max_size=1000 #850
 
-    r=0
-    # Create a unique file name using parameters
-    filename = f"friendster_adj_mat_{r}_{min_size}.npz"
-    filepath = os.path.join("Adj_matrices/", filename)
+        A, vertex_list, label_list, sampled_comms = build_sampled_dataset(cmty_file, edge_file,min_size,max_size)
+        node_indices = []
+        comm_indices = []
+
+        print(len(sampled_comms))
+        # for i in range(len(sampled_comms)):
+        #     print('Length of the community:', len(sampled_comms[i]))
+
+        for node_i, comm_list in enumerate(label_list):
+            for q in comm_list:
+                node_indices.append(node_i)
+                comm_indices.append(q)
+
+        node_indices = np.array(node_indices)
+        comm_indices = np.array(comm_indices)
+
+        r=0
+        if Save_Results==True:
+
+            # Create a unique file name using parameters
+            filename = f"friendster_adj_mat_{r}_{min_size}.npz"
+            filepath = os.path.join("Adj_matrices/", filename)
 
 
-    # Create community info files
-    filename_comm_info_labels = f"Comm_Info_friendster_labels_{min_size}.npy"
-    filename_comm_info_vert = f"Comm_Info_friendster_vert_{min_size}.npy"
-    filepath__comm_info_labels = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_labels)
-    filepath__comm_info_verts = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_vert)
+            # Create community info files
+            filename_comm_info_labels = f"Comm_Info_friendster_labels_{min_size}.npy"
+            filename_comm_info_vert = f"Comm_Info_friendster_vert_{min_size}.npy"
+            filepath__comm_info_labels = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_labels)
+            filepath__comm_info_verts = os.path.join("Adj_matrices/Community_Info/", filename_comm_info_vert)
 
-    np.save(filepath__comm_info_labels,comm_indices)
-    np.save(filepath__comm_info_verts,node_indices)
-    
-    save_npz(filepath, A)
+            np.save(filepath__comm_info_labels,comm_indices)
+            np.save(filepath__comm_info_verts,node_indices)
 
-    # plt.figure()
-    # plt.spy(A[0:1000,0:1000])
+            save_npz(filepath, A)
+
+        # plt.figure()
+        # plt.spy(A[0:1000,0:1000])
 
