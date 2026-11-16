@@ -183,7 +183,7 @@ if __name__=="__main__":
     cmty_file = "SNAP_Datasets/com-lj.top5000.cmty.txt.gz"
     #cmty_file = "SNAP_Datasets/com-lj.all.cmty.txt.gz"
     edge_file = "SNAP_Datasets/com-lj.ungraph.txt.gz"
-    Save_Results= False
+    Save_Results= True #True
 
     for i in range(1):
 
