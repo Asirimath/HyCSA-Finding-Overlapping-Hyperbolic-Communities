@@ -1,0 +1,12 @@
+matplotlib
+networkx
+numpy
+scipy
+typing
+ctypes
+os
+platform
+time
+random
+collections
+gzip
