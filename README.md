@@ -24,5 +24,10 @@ Run `Codes/Real_World_Data/Data_Gen_{Data_bsae_name}_v2.py` with parameter `Save
 
 
 ## To run community prediction in real-world networks:
-Run `Codes/main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters 'Data_base', Initial_Seeding_Method, seeding_param, `Save_Results=True`.
+
+- First we set parameter `Data_base`.
+
+- To run $\mathrm{HyCSA}_{\mathrm{rss}}$, we run `Codes/ main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rss`,`Save_Results=True`.
+
+
 
