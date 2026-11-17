@@ -1,6 +1,6 @@
 import numpy as np
 import networkx as nx
-import itertools
+#import itertools
 import matplotlib.pyplot as plt
 import os
 from scipy.sparse import csr_matrix, save_npz
@@ -149,7 +149,7 @@ def Create_Community_Info_v3(n_vertices,community_size,Community_shape_info,seed
             sizes_temp = np.maximum(sizes_temp, 10)  # ensure min 10 per community
             sizes.append(sizes_temp)
             
-            Intersection_points_temp=np.random.randint(10,40) # Number of common points (10 to 40)
+            Intersection_points_temp=np.random.randint(10,41) # Number of common points (10 to 40)
             Intersection_points.append(Intersection_points_temp)
       
             Indx+=sizes[count-1]-Intersection_points[count]
@@ -175,17 +175,14 @@ def Create_Community_Info_v3(n_vertices,community_size,Community_shape_info,seed
 if __name__=="__main__": 
     
     # --- Parameter space ---
-    n_vertices_approximate = 1500 #This can be change
+    n_vertices_approximate = 2000 #This can be change
     noise_levels = [0.0, 0.01, 0.02, 0.04, 0.08]
     Community_size=[20,20,40] #10
     Community_shape=['Normal','Star','Clique']
     Save_Results=False
-    n_replicates = 10
+    n_replicates = 10 #number of replications
     max_comm_size=151
     min_comm_size=50
-    
-    
-    
     
     fixed = {'community_size':1, 'noise_levels': [], 'community_shape': 1}
     vary = {'community_size': [], 'noise_levels': 1, 'community_shape': []}
