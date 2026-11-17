@@ -24,7 +24,7 @@ Run `Codes/Real_World_Data/Data_Gen_{Data_base}_v2.py` with parameter `Save_Resu
 
 - To run $\mathrm{HyCSA}_{\mathrm{rss}}$, we run then `Codes/ main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rss`,`Save_Results=True`.
 
-- To run $\mathrm{HyCSA}_{\mathrm{rw}}$: 
+- To run $\mathrm{HyCSA}_{\mathrm{rw}}$: we run then  `Codes/ main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rw`,`Save_Results=True`.
 
 
 
