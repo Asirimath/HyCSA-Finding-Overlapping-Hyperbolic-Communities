@@ -17,14 +17,14 @@ Run `Codes/Real_World_Data/Data_Gen_{Data_base}_v2.py` with parameter `Save_Resu
 
 - To run $\mathrm{HyCSA}_{\mathrm{rw}}$: 
   - we set the parameters `seeding_param=[]`. 
-  - then, we run `Codes/ Main_8_Synthetic_Data_Overlap_Exp_Sparse.py` with  parameters `Initial_Seeding_Method=rw`, `Save_Results=True`.
+  - then, we run `Codes/Main_8_Synthetic_Data_Overlap_Exp_Sparse.py` with  parameters `Initial_Seeding_Method=rw`, `Save_Results=True`.
 
 ## To run community prediction in real-world networks:
 - First we set parameter `Data_base`.
 
-- To run $\mathrm{HyCSA}_{\mathrm{rss}}$, we run then `Codes/ main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rss`,`Save_Results=True`.
+- To run $\mathrm{HyCSA}_{\mathrm{rss}}$, we run then `Codes/main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rss`,`Save_Results=True`.
 
-- To run $\mathrm{HyCSA}_{\mathrm{rw}}$: we run then  `Codes/ main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rw`,`Save_Results=True`.
+- To run $\mathrm{HyCSA}_{\mathrm{rw}}$: we run then  `Codes/main_8_Real_World_Idea2_mul_comm_using_Sparse.py` with  parameters `Initial_Seeding_Method=rw`,`Save_Results=True`.
 
 
 
