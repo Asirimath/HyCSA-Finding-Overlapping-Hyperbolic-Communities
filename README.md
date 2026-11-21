@@ -5,6 +5,8 @@
 | :--- | :---: |
 |Codes directory has following sub-directories: <br> &bull; Results <br>  &bull; Synthetic_Data  <br>  &bull; Real_World_Data. <br> `Synthetic_Data` and `Real_World_Data`  contain the codes for obtaining the data, while the `Results` stores the results obtained from experiments. | <img src="Hyperbolic_Com.png" alt="Hyperbolic community structure" width="200"> <br> *Fig. 1: A hyperbolic community and two overlapping communities.* |
 
+## To genearate .dll or .so files:
+Run the `Codes/CPP_file_Sparse/ac_fast_ctypes_Sparse.cpp` and `Codes/CPP_file_Sparse/compute_AC_grid_cpp_global_do_sparse.cpp` files.
 
 ## To generate synthetic networks:
 Run `Codes/Synthetic_Data/Data_gen_v3_Overlaping_Comm_Sparse.py` with parameter `Save_Results=True`.
